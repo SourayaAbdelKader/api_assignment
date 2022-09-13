@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(134, 134, 209, 0.637);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25pxs;
+}
+
+body > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    margin: 2vw;
+    padding: 2vw;
+    border-radius: 25px;
+    max-width: 40%;
+    max-height: 40%;
+    min-width: 40%;
+    min-height: 40%;
+}
+
+.text {
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 1vw 2vw;
+}
+
+.button {
+    background-color: rgba(134, 134, 209, 0.637);
+    border-radius: 25px;
+    padding: 1vw 2vw;
+    border-bottom: 0cm;
+    border-top: 0cm;
+    border-left: 0cm;
+    border-right: 0cm;
+    margin-top: 1vw;
+}

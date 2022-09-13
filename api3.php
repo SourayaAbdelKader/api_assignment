@@ -10,27 +10,35 @@ Not a word that can be found in a dictionary or the name of a person, character,
 Significantly different from your previous passwords.*/
 
     $password = $_POST['password'];
-    $strong_password = false; 
     $symbols = '[@_!#$%^&*()<>?/|}{~:]';
 
-    if (strlen(password) >= 12){
-        $strong_password = true; 
-    };
-
-    foreach ($password as $value) {
-        if (ctype_upper($value))  {
-            $strong_password = true;
+    function strongPassword () {
+        if (strlen(password) < 12){
+            return false 
         };
-        if (ctype_lower($value)) {
-            $strong_password = true;
-        };
-        if (is_numeric($value)){
-            $strong_password = true;
-        };
-        if (preg_match(($symbols), $value)){
-            $strong_password = true;
+        foreach ($password as $value) {
+            if (ctype_upper($value))  {
+                $capital_letter = true;
+            };
+            if (ctype_lower($value)) {
+                $lower_letter = true;
+            };
+            if (is_numeric($value)){
+                $number = true;
+            };
+            if (preg_match(($symbols), $value)){
+                $symbol = true;
+            }
         }
+        if ($capital_letter and $lower_letter and $number and $symbol) {
+            return true
+        } 
+        return false
     }
-    echo $strong_password;
+    
+    $results = [
+        "strong" => strongPassword(),
+    ]; 
 
+    echo json_encode($results);
 </php>
